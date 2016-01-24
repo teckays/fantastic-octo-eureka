@@ -52,5 +52,8 @@ database.ready(app, function(err){
 
     app.listen(config.port || 3000, function () {
         console.log('Retently example app listening on port', this.address().port);
+        console.log('===========================\n')
+        console.log('http://127.0.0.1:' + this.address().port);
+        console.log('\n===========================')
     });
 });
