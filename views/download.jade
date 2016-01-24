@@ -1,0 +1,35 @@
+//
+   Created by andreistalbe on 1/23/16.
+
+extends layout
+
+block body
+    h3 Download Customers
+
+    div(style="border: 1px solid grey; padding: 8px;")
+        form#sutomersForm(method="GET", action='/customers/download')
+            label(for="offset") Offset:
+            input(type="text" name="offset" placeholder="Offset" id="offset")
+
+            br
+            br
+
+            label(for="limit") Limit:
+            input(type="text" name="limit", placeholder="Limit", id="limit")
+
+            br
+            br
+
+            button(type="submit") Filter
+            a(href="/customers/download") Reset
+
+            br
+            br
+
+            small
+                i * Validation not supported. Please use responsibly ;)
+
+    br
+    br
+
+    a(href=tlink) Download

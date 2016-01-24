@@ -1,0 +1,12 @@
+//
+   Created by andreistalbe on 1/23/16.
+
+extends layout
+
+block body
+
+    a(href="/") Home
+    span &nbsp;|&nbsp;
+    a(href="/customers/download") Customers
+    h1 HTTP #{error.code}
+    pre #{error.message}

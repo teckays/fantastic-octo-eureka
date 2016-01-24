@@ -1,0 +1,29 @@
+//
+   Created by andreistalbe on 1/23/16.
+
+extends layout
+
+block body
+
+    h3 Worker Status
+
+    hr
+    br
+
+    table(style="width: 100%; border: 1px solid grey; text-align: center;")
+        tr
+            th File
+            th Status
+            th Health
+            th Size
+            th Download
+        tr
+            td #{worker.file}
+            td #{worker.status == status.pending ? 'Working ...' : worker.status == status.error ? 'Error' : 'Done'}
+            td #{!worker.error ? "No Errors" : worker.error}
+            td #{worker.doc ? worker.doc.length / 1000 : '--'} KB
+            td
+                if worker.status !== status.done
+                    span Processing ...
+                else
+                    a(href=href) Download
